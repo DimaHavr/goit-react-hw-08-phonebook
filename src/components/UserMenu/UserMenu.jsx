@@ -1,9 +1,11 @@
+import { Button, Container, Text } from './UserMenu.styled';
+
 const UserMenu = () => {
   return (
-    <div>
-      <p>mango@mail.com</p>
-      <button>Logout</button>
-    </div>
+    <Container>
+      <Text>mango@mail.com</Text>
+      <Button>Log out</Button>
+    </Container>
   );
 };
 
