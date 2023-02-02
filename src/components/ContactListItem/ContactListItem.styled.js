@@ -1,4 +1,15 @@
 import styled from '@emotion/styled';
+import { AiFillDelete } from 'react-icons/ai';
+
+export const DeleteIcon = styled(AiFillDelete)`
+  width: 35px;
+  height: 35px;
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    color: orangered;
+  }
+`;
 
 export const Item = styled.li`
   display: flex;
@@ -23,17 +34,7 @@ export const Text = styled.p`
 export const TextItem = styled.span``;
 
 export const Button = styled.button`
-  width: 80px;
-  height: 35px;
-  font-weight: bold;
-  font-size: 15px;
-  color: #000;
-  background-color: #fff;
+  background: none;
   border: none;
-  border-radius: 5px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  :active {
-    transform: scale(1.1);
-  }
 `;

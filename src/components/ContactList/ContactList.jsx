@@ -1,24 +1,27 @@
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { getContacts } from '../../redux/contactsSlice';
+import { getFilter } from '../../redux/filterSlice';
 import { List } from './ContactList.styled';
 import ContactListItem from 'components/ContactListItem/ContactListItem';
 
-const ContactList = ({ contactsArray }) => {
+const ContactList = () => {
+  const filter = useSelector(getFilter);
+  const { contacts } = useSelector(getContacts);
+
+  const getAddedContacts = () => {
+    const toLowerCaseFilter = filter.toLocaleLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLocaleLowerCase().includes(toLowerCaseFilter)
+    );
+  };
+
   return (
     <List>
-      {contactsArray.map(({ name, number, id }) => {
+      {getAddedContacts().map(({ name, number, id }) => {
         return <ContactListItem key={id} name={name} number={number} id={id} />;
       })}
     </List>
   );
 };
 
-ContactList.propTypes = {
-  contactsArray: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-    })
-  ),
-};
 export default ContactList;

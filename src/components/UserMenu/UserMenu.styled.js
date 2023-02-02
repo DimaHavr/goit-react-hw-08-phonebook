@@ -8,6 +8,7 @@ export const Container = styled.div`
 
 export const Text = styled.div`
   font-weight: 600;
+  color: white;
 `;
 
 export const Button = styled.button`
@@ -20,8 +21,8 @@ export const Button = styled.button`
   background: linear-gradient(#1b1b1b, #111);
   font-weight: 500;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  :hover,
-  :focus {
+  &:hover,
+  &:focus {
     transform: scale(1.05);
     color: orangered;
   }

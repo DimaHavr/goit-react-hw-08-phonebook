@@ -1,7 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { deleteContact } from 'redux/operation';
-import { Item, Button, Text, TextItem } from './ContactListItem.styled';
+import {
+  Item,
+  Button,
+  Text,
+  TextItem,
+  DeleteIcon,
+} from './ContactListItem.styled';
 
 const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -18,7 +24,7 @@ const ContactListItem = ({ id, name, number }) => {
         }}
         type="button"
       >
-        Delete
+        <DeleteIcon />
       </Button>
     </Item>
   );
