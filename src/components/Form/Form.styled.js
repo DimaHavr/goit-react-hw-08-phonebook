@@ -39,12 +39,11 @@ export const FormBox = styled.form`
   }
 `;
 
-export const InputContainer = styled.label`
+export const InputContainer = styled.div`
   position: relative;
 `;
 
 export const FormInput = styled.input`
-  position: relative;
   text-indent: 30px;
   width: 280px;
   padding: 10px;

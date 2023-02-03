@@ -9,6 +9,8 @@ import {
   ShowPasswordButton,
   EyeIcon,
   EyeOffIcon,
+  UserIcon,
+  InputContainer,
 } from './RegisterForm.styled';
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
@@ -43,29 +45,36 @@ const RegisterForm = () => {
     <FormContainer>
       <form onSubmit={handleSubmit}>
         <Box display="flex" flexDirection="column">
-          <FormInput
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={event => setUsername(event.target.value)}
-            required
-          />
-          <FormInput
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={event => setEmail(event.target.value)}
-            required
-          />
+          <InputContainer>
+            <UserIcon />
+            <FormInput
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={event => setUsername(event.target.value)}
+              required
+            />
+          </InputContainer>
+          <InputContainer>
+            <FormInput
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={event => setEmail(event.target.value)}
+              required
+            />
+          </InputContainer>
         </Box>
         <ShowPasswordContainer>
-          <FormInput
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-            value={password}
-            onChange={event => setPassword(event.target.value)}
-            required
-          />
+          <InputContainer>
+            <FormInput
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              value={password}
+              onChange={event => setPassword(event.target.value)}
+              required
+            />
+          </InputContainer>
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
             {showPassword ? <EyeOffIcon /> : <EyeIcon />}
           </ShowPasswordButton>

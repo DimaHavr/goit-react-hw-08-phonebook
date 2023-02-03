@@ -8,6 +8,7 @@ import {
   ShowPasswordButton,
   EyeIcon,
   EyeOffIcon,
+  InputContainer,
 } from './LoginForm.styled';
 
 const LoginForm = () => {
@@ -32,21 +33,25 @@ const LoginForm = () => {
   return (
     <FormContainer>
       <form onSubmit={handleSubmit}>
-        <FormInput
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={event => setEmail(event.target.value)}
-          required
-        />
-        <ShowPasswordContainer>
+        <InputContainer>
           <FormInput
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-            value={password}
-            onChange={event => setPassword(event.target.value)}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={event => setEmail(event.target.value)}
             required
           />
+        </InputContainer>
+        <ShowPasswordContainer>
+          <InputContainer>
+            <FormInput
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              value={password}
+              onChange={event => setPassword(event.target.value)}
+              required
+            />
+          </InputContainer>
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
             {showPassword ? <EyeOffIcon /> : <EyeIcon />}
           </ShowPasswordButton>
