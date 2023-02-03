@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { deleteContact } from 'redux/operation';
+import { deleteContact } from 'redux/contacts/operation';
 import {
   Item,
   Button,

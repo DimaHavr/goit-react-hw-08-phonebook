@@ -11,20 +11,20 @@ import {
 } from './LoginForm.styled';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('Username: ', username);
+    console.log('email: ', email);
     console.log('Password: ', password);
-    Notify.success(`Hello, ${username}!`);
+    Notify.success(`Hello, ${email}!`);
     resetForm(event);
   };
 
   const resetForm = event => {
-    setUsername('');
+    setEmail('');
     setPassword('');
     event.target.reset();
   };
@@ -33,10 +33,10 @@ const LoginForm = () => {
     <FormContainer>
       <form onSubmit={handleSubmit}>
         <FormInput
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={event => setUsername(event.target.value)}
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={event => setEmail(event.target.value)}
           required
         />
         <ShowPasswordContainer>

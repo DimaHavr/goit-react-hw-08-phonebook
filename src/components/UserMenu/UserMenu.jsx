@@ -1,10 +1,12 @@
-import { Button, Container, Text } from './UserMenu.styled';
+import { Button, Container, Text, LogOutIcon } from './UserMenu.styled';
 
 const UserMenu = () => {
   return (
     <Container>
-      <Text>mango@mail.com</Text>
-      <Button>Log out</Button>
+      <Text>mango</Text>
+      <Button>
+        <LogOutIcon />
+      </Button>
     </Container>
   );
 };

@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { FormBox, FormLabel, Button } from './Form.styled';
+import {
+  FormBox,
+  FormInput,
+  Button,
+  PhoneIcon,
+  UserIcon,
+  InputContainer,
+} from './Form.styled';
 import Box from '../Box';
-import { addContact } from '../../redux/operation';
-import { getContacts } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contacts/operation';
+import { getContacts } from '../../redux/contacts/contactsSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -48,21 +55,23 @@ const Form = () => {
       marginBottom="10px"
     >
       <FormBox onSubmit={onSubmitForm}>
-        <FormLabel>
-          Name
-          <input
+        <InputContainer>
+          <UserIcon />
+          <FormInput
             value={name}
+            placeholder="Name"
             type="text"
             name="name"
             maxLength="20"
             required
             onChange={onChangeInput}
           />
-        </FormLabel>
-        <FormLabel>
-          Number
-          <input
+        </InputContainer>
+        <InputContainer>
+          <PhoneIcon />
+          <FormInput
             value={number}
+            placeholder="Phone number"
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -71,7 +80,7 @@ const Form = () => {
             required
             onChange={onChangeInput}
           />
-        </FormLabel>
+        </InputContainer>
         <Button type="submit">Add Contact</Button>
       </FormBox>
     </Box>

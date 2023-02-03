@@ -1,3 +1,4 @@
+import Box from 'components/Box';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useState } from 'react';
 import {
@@ -41,20 +42,22 @@ const RegisterForm = () => {
   return (
     <FormContainer>
       <form onSubmit={handleSubmit}>
-        <FormInput
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={event => setUsername(event.target.value)}
-          required
-        />
-        <FormInput
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={event => setEmail(event.target.value)}
-          required
-        />
+        <Box display="flex" flexDirection="column">
+          <FormInput
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={event => setUsername(event.target.value)}
+            required
+          />
+          <FormInput
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={event => setEmail(event.target.value)}
+            required
+          />
+        </Box>
         <ShowPasswordContainer>
           <FormInput
             type={showPassword ? 'text' : 'password'}

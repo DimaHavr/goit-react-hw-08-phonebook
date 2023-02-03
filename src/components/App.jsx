@@ -3,11 +3,12 @@ import { Route, Routes } from 'react-router-dom';
 import Box from './Box';
 import Loader from './Loader';
 import SharedLayout from './SharedLayout';
-import Register from 'pages/Register';
-import Login from 'pages/Login';
 import NotFoundPage from 'pages/NotFoundPage';
 
+const Home = lazy(() => import('../pages/Home'));
 const Contacts = lazy(() => import('../pages/Contacts'));
+const Login = lazy(() => import('../pages/Login'));
+const Register = lazy(() => import('../pages/Register'));
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
     >
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Login />} />
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contacts" element={<Contacts />} />
         </Route>

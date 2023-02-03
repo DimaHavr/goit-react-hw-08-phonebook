@@ -1,18 +1,7 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export const Header = styled.header`
-  padding: 15px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-
-  background-color: #00000082;
-  text-align: center;
-`;
-
-export const Link = styled(NavLink)`
+export const LinkItem = styled(Link)`
   padding: 8px 16px;
   border-radius: 4px;
   text-transform: uppercase;

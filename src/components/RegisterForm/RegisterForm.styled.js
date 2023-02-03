@@ -28,7 +28,7 @@ export const FormContainer = styled.div`
 `;
 
 export const FormInput = styled.input`
-  width: 100%;
+  width: 300px;
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
@@ -66,14 +66,12 @@ export const FormButton = styled.button`
 
 export const ShowPasswordContainer = styled.div`
   position: relative;
-  width: 100%;
-  margin-bottom: 20px;
 `;
 
 export const ShowPasswordButton = styled.div`
   position: absolute;
-  right: 0;
-  top: 50%;
+  right: 10px;
+  top: 38%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
