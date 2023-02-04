@@ -1,17 +1,30 @@
 import styled from 'styled-components';
 import { BiShowAlt, BiHide } from 'react-icons/bi';
+import { MdOutlineMailOutline, MdVpnKey } from 'react-icons/md';
 
-// export const Icon = styled(BiShowAlt)`
-//   width: 20px;
-//   height: 20px;
-//   position: absolute;
-//   left: 10px;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background: transparent;
-//   border: none;
-//   z-index: 100;
-// `;
+export const EmailIcon = styled(MdOutlineMailOutline)`
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  left: 10px;
+  top: 36%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  z-index: 100;
+`;
+
+export const PassIcon = styled(MdVpnKey)`
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 10px;
+  top: 33%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  z-index: 100;
+`;
 
 export const EyeIcon = styled(BiShowAlt)`
   width: 25px;
@@ -44,6 +57,7 @@ export const InputContainer = styled.div`
 `;
 
 export const FormInput = styled.input`
+  text-indent: 30px;
   width: 300px;
   padding: 10px;
   margin-bottom: 20px;

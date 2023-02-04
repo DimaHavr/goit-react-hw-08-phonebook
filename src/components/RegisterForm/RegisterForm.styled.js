@@ -1,18 +1,47 @@
 import styled from 'styled-components';
 import { BiShowAlt, BiHide } from 'react-icons/bi';
 import { FaUserAlt } from 'react-icons/fa';
+import {
+  MdOutlineMailOutline,
+  MdVpnKey,
+  MdOutlineVpnKey,
+} from 'react-icons/md';
 
-// export const Icon = styled(BiShowAlt)`
-//   width: 20px;
-//   height: 20px;
-//   position: absolute;
-//   left: 10px;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background: transparent;
-//   border: none;
-//   z-index: 100;
-// `;
+export const EmailIcon = styled(MdOutlineMailOutline)`
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  left: 10px;
+  top: 36%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  z-index: 100;
+`;
+
+export const PassIcon = styled(MdVpnKey)`
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 10px;
+  top: 33%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  z-index: 100;
+`;
+
+export const PassItemIcon = styled(MdOutlineVpnKey)`
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 10px;
+  top: 33%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  z-index: 100;
+`;
 
 export const UserIcon = styled(FaUserAlt)`
   width: 20px;

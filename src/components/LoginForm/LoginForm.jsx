@@ -8,6 +8,8 @@ import {
   ShowPasswordButton,
   EyeIcon,
   EyeOffIcon,
+  EmailIcon,
+  PassIcon,
   InputContainer,
 } from './LoginForm.styled';
 
@@ -34,6 +36,7 @@ const LoginForm = () => {
     <FormContainer>
       <form onSubmit={handleSubmit}>
         <InputContainer>
+          <EmailIcon />
           <FormInput
             type="email"
             placeholder="Email"
@@ -43,6 +46,7 @@ const LoginForm = () => {
           />
         </InputContainer>
         <ShowPasswordContainer>
+          <PassIcon />
           <InputContainer>
             <FormInput
               type={showPassword ? 'text' : 'password'}
@@ -53,7 +57,7 @@ const LoginForm = () => {
             />
           </InputContainer>
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
           </ShowPasswordButton>
         </ShowPasswordContainer>
         <FormButton type="submit">Login</FormButton>

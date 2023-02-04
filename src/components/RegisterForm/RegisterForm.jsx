@@ -10,6 +10,9 @@ import {
   EyeIcon,
   EyeOffIcon,
   UserIcon,
+  EmailIcon,
+  PassIcon,
+  PassItemIcon,
   InputContainer,
 } from './RegisterForm.styled';
 const RegisterForm = () => {
@@ -21,6 +24,25 @@ const RegisterForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    if (username.length < 3 || username.length > 15) {
+      Notify.failure('Name must be at least min 3 and max 15 characters long');
+      return;
+    }
+
+    if (password.length < 8) {
+      Notify.failure('Password must be at least 8 characters long');
+      return;
+    }
+    if (!/\d/.test(password)) {
+      Notify.failure('Password must contain at least one digit');
+      return;
+    }
+    if (!/[a-zA-Z]/.test(password)) {
+      Notify.failure('Password must contain at least one letter');
+      return;
+    }
+
     if (confirmPassword !== password) {
       Notify.failure('Passwords are different, check them and try again...');
       return;
@@ -56,6 +78,7 @@ const RegisterForm = () => {
             />
           </InputContainer>
           <InputContainer>
+            <EmailIcon />
             <FormInput
               type="email"
               placeholder="Email"
@@ -67,6 +90,7 @@ const RegisterForm = () => {
         </Box>
         <ShowPasswordContainer>
           <InputContainer>
+            <PassItemIcon />
             <FormInput
               type={showPassword ? 'text' : 'password'}
               placeholder="Password"
@@ -76,10 +100,11 @@ const RegisterForm = () => {
             />
           </InputContainer>
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
           </ShowPasswordButton>
         </ShowPasswordContainer>
         <ShowPasswordContainer>
+          <PassIcon />
           <FormInput
             type={showPassword ? 'text' : 'password'}
             placeholder="Confirm Password"
@@ -88,7 +113,7 @@ const RegisterForm = () => {
             required
           />
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
           </ShowPasswordButton>
         </ShowPasswordContainer>
         <FormButton type="submit">Register</FormButton>
