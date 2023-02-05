@@ -9,7 +9,13 @@ import { useAuth } from 'hooks';
 export const SharedLayout = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      height="100vh"
+      overflow="hidden"
+    >
       <Header>
         <nav>
           {!isLoggedIn && (
@@ -32,7 +38,7 @@ export const SharedLayout = () => {
       >
         <Outlet />
       </Suspense>
-    </>
+    </Box>
   );
 };
 

@@ -39,7 +39,7 @@ const Home = () => {
         display="flex"
         alignItems="center"
         marginTop="auto"
-        paddingBottom="90px"
+        paddingBottom="10px"
       >
         <CopyIcon />
         <TextLink href="https://github.com/DimaHavr">DimaHavr</TextLink>
