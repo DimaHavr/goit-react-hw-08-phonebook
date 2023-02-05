@@ -6,11 +6,10 @@ export const CopyIcon = styled(CgCopyright)`
   width: 35px;
   height: 35px;
   color: #fff;
+  margin-right: 5px;
 `;
 
 export const GlitchWrapper = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
