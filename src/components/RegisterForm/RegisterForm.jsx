@@ -54,7 +54,7 @@ const RegisterForm = () => {
             <UserIcon />
             <FormInput
               type="text"
-              placeholder="name"
+              placeholder="Name"
               value={name}
               onChange={event => setName(event.target.value)}
               required

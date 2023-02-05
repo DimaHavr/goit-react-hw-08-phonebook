@@ -51,7 +51,7 @@ export const FormInput = styled.input`
   padding: 10px;
   font-size: 16px;
   border: none;
-  border: 2px solid darkslategrey;
+  border: 2px solid #000;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,8 +59,9 @@ export const FormInput = styled.input`
   &:hover,
   &:focus {
     transform: scale(1.01);
-    color: darkslategrey;
-    outline: 2px solid darkslategrey;
+    color: #000;
+    outline: 1px solid #000;
+    border-radius: 5px;
   }
 `;
 
@@ -78,5 +79,19 @@ export const Button = styled.button`
   &:focus {
     transform: scale(1.05);
     color: darkslategrey;
+  }
+  @keyframes btn-animation {
+    0% {
+      transform: scale(1.05);
+    }
+    20% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1.13);
+    }
+  }
+  :active {
+    animation: btn-animation 1s ease-out;
   }
 `;

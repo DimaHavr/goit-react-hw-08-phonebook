@@ -7,8 +7,6 @@ export const Header = styled.header`
   justify-content: center;
   gap: 15px;
   align-items: center;
-  margin-bottom: 20px;
-  overflow: hidden;
   background-color: #00000082;
   text-align: center;
   width: 100%;

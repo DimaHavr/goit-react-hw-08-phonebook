@@ -14,7 +14,7 @@ export const SharedLayout = () => {
       flexDirection="column"
       alignItems="center"
       height="100vh"
-      overflow="hidden"
+      overflowX="hidden"
     >
       <Header>
         <nav>

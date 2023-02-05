@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
-import { ContactsContainer } from './Contacts.styled';
+import {
+  ContactsContainer,
+  Glitch,
+  GlitchWrapper,
+  Keyframes,
+} from './Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllContacts, selectLoading } from 'redux/contacts/selectors';
 import { fetchContacts } from '../../redux/contacts/operations';
@@ -22,13 +27,14 @@ const Contacts = () => {
     <Box as="section">
       <ContactsContainer>
         <ContactForm />
+        <GlitchWrapper>
+          <Glitch data-glitch="Contacts:">Contacts:</Glitch>
+          <Keyframes />
+        </GlitchWrapper>
+
+        <ContactFilter />
         {isLoading && <Loader />}
-        {Boolean(contacts.length) && (
-          <>
-            <ContactFilter />
-            <ContactList />
-          </>
-        )}
+        {Boolean(contacts.length) && <ContactList />}
       </ContactsContainer>
     </Box>
   );

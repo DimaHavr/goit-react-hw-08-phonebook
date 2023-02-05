@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   FilterBox,
   FilterInput,
-  SubTitle,
   InputContainer,
   FilterIcon,
 } from './ContactFilter.styled';
@@ -14,7 +13,6 @@ const ContactFilter = () => {
   const filter = useSelector(getFilter);
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-      <SubTitle>Contacts:</SubTitle>
       <FilterBox>
         <InputContainer>
           <FilterIcon />

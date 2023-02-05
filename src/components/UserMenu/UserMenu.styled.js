@@ -36,4 +36,19 @@ export const Button = styled.button`
     transform: scale(1.05);
     fill: orangered;
   }
+
+  @keyframes btn-animation {
+    0% {
+      transform: scale(1.05);
+    }
+    20% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1.13);
+    }
+  }
+  :active {
+    animation: btn-animation 1s ease-out;
+  }
 `;
