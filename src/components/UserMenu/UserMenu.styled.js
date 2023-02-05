@@ -14,7 +14,7 @@ export const LogOutIcon = styled(AiOutlineLogout)`
 
 export const Container = styled.div`
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
 `;
 

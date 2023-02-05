@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 export const Header = styled.header`
   padding: 20px 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 15px;
   align-items: center;
   margin-bottom: 20px;
 
@@ -24,7 +25,7 @@ export const Link = styled(NavLink)`
   &:hover,
   &:focus {
     transform: scale(1.05);
-    color: darkslategrey;
+    color: orangered;
   }
 
   &.active {

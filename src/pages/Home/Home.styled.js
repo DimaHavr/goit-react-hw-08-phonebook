@@ -1,6 +1,78 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const GlitchWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(33, 33, 33, 0);
+`;
+
+export const Glitch = styled.h1`
+  position: relative;
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 5px;
+  z-index: 1;
+
+  &:before,
+  &:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    animation: glitch-color 1s ease-in-out both infinite;
+  }
+
+  &:before {
+    color: #000000;
+    z-index: -1;
+  }
+
+  &:after {
+    color: darkslategrey;
+    z-index: -2;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 46px;
+  }
+`;
+
+export const Keyframes = styled.style`
+  @keyframes glitch-color {
+    0% {
+      transform: translate(0);
+    }
+
+    20% {
+      transform: translate(-3px, 3px);
+    }
+
+    40% {
+      transform: translate(-3px, -3px);
+    }
+
+    60% {
+      transform: translate(3px, 3px);
+    }
+
+    80% {
+      transform: translate(3px, -3px);
+    }
+
+    to {
+      transform: translate(0);
+    }
+  }
+`;
+
 export const LinkItem = styled(Link)`
   padding: 8px 16px;
   border-radius: 4px;
@@ -8,6 +80,7 @@ export const LinkItem = styled(Link)`
   text-decoration: none;
   color: white;
   font-weight: 500;
+  font-size: 26px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
@@ -25,5 +98,17 @@ export const LinkItem = styled(Link)`
     :focus {
       transform: scale(1.05);
     }
+  }
+`;
+
+export const Text = styled.p`
+  max-width: 600px;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: start;
+  padding: 10px;
+
+  @media screen and (max-width: 767px) {
   }
 `;

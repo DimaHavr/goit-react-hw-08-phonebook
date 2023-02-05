@@ -18,24 +18,6 @@ import {
   InputContainer,
 } from './RegisterForm.styled';
 
-//  if (name.length < 3 || username.length > 15) {
-//    Notify.failure('Name must be at least min 3 and max 15 characters long');
-//    return;
-//  }
-
-//  if (password.length < 8) {
-//    Notify.failure('Password must be at least 8 characters long');
-//    return;
-//  }
-//  if (!/\d/.test(password)) {
-//    Notify.failure('Password must contain at least one digit');
-//    return;
-//  }
-//  if (!/[a-zA-Z]/.test(password)) {
-//    Notify.failure('Password must contain at least one letter');
-//    return;
-//  }
-
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -51,6 +33,7 @@ const RegisterForm = () => {
       Notify.failure('Passwords are different, check them and try again...');
       return;
     }
+
     dispatch(register({ name, email, password }));
     resetForm(event);
   };
@@ -75,6 +58,7 @@ const RegisterForm = () => {
               value={name}
               onChange={event => setName(event.target.value)}
               required
+              maxLength="15"
             />
           </InputContainer>
           <InputContainer>
@@ -97,6 +81,7 @@ const RegisterForm = () => {
               value={password}
               onChange={event => setPassword(event.target.value)}
               required
+              minLength="8"
             />
           </InputContainer>
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
