@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from './operation';
+import {
+  fetchContacts,
+  addContact,
+  deleteContact,
+} from '../contacts/operations.js';
 import { logOut } from 'redux/auth/operations';
 
 const handlePending = state => {
@@ -55,7 +59,3 @@ export const contactsSlice = createSlice({
     },
   },
 });
-
-// Selectors
-
-export const getContacts = state => state.contacts;

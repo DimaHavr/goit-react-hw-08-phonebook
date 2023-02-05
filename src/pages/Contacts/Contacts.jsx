@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
+import { ContactsContainer } from './Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../../redux/contacts/contactsSlice';
-import { fetchContacts } from '../../redux/contacts/operation';
-import Form from '../../components/Form';
+import { selectAllContacts, selectLoading } from 'redux/contacts/selectors';
+import { fetchContacts } from '../../redux/contacts/operations';
+import Box from 'components/Box';
+import ContactForm from '../../components/ContactForm';
 import ContactList from '../../components/ContactList';
 import ContactFilter from '../../components/ContactFilter';
-import Box from 'components/Box';
-import { ContactsContainer } from './Contacts.styled';
+import Loader from 'components/Loader';
 
 const Contacts = () => {
+  const contacts = useSelector(selectAllContacts);
+  const isLoading = useSelector(selectLoading);
   const dispatch = useDispatch();
-  const { contacts } = useSelector(getContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -19,10 +21,11 @@ const Contacts = () => {
   return (
     <Box as="section">
       <ContactsContainer>
-        <Form />
-        {contacts.length > 0 && (
+        <ContactForm />
+        {contacts.length === 0 && (
           <>
             <ContactFilter />
+            {isLoading && <Loader />}
             <ContactList />
           </>
         )}

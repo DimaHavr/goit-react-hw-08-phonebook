@@ -8,14 +8,14 @@ import {
   PhoneIcon,
   UserIcon,
   InputContainer,
-} from './Form.styled';
+} from './ContactForm.styled';
 import Box from '../Box';
-import { addContact } from '../../redux/contacts/operation';
-import { getContacts } from '../../redux/contacts/contactsSlice';
+import { addContact } from '../../redux/contacts/operations';
+import { selectAllContacts } from '../../redux/contacts/selectors';
 
-const Form = () => {
+const ContactForm = () => {
   const dispatch = useDispatch();
-  const { contacts } = useSelector(getContacts);
+  const contacts = useSelector(selectAllContacts);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -87,4 +87,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default ContactForm;

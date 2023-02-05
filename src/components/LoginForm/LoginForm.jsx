@@ -1,5 +1,6 @@
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/operations';
 import {
   FormContainer,
   FormInput,
@@ -14,15 +15,14 @@ import {
 } from './LoginForm.styled';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('email: ', email);
-    console.log('Password: ', password);
-    Notify.success(`Hello, ${email}!`);
+    dispatch(logIn({ email, password }));
     resetForm(event);
   };
 

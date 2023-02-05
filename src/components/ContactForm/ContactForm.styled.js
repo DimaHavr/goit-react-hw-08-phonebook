@@ -77,8 +77,4 @@ export const Button = styled.button`
     transform: scale(1.05);
     color: orangered;
   }
-
-  @media screen and (max-width: 767px) {
-    width: 100%;
-  }
 `;

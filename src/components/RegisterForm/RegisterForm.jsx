@@ -1,6 +1,8 @@
 import Box from 'components/Box';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/operations';
 import {
   FormContainer,
   FormInput,
@@ -15,8 +17,28 @@ import {
   PassItemIcon,
   InputContainer,
 } from './RegisterForm.styled';
+
+//  if (name.length < 3 || username.length > 15) {
+//    Notify.failure('Name must be at least min 3 and max 15 characters long');
+//    return;
+//  }
+
+//  if (password.length < 8) {
+//    Notify.failure('Password must be at least 8 characters long');
+//    return;
+//  }
+//  if (!/\d/.test(password)) {
+//    Notify.failure('Password must contain at least one digit');
+//    return;
+//  }
+//  if (!/[a-zA-Z]/.test(password)) {
+//    Notify.failure('Password must contain at least one letter');
+//    return;
+//  }
+
 const RegisterForm = () => {
-  const [username, setUsername] = useState('');
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -25,38 +47,17 @@ const RegisterForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (username.length < 3 || username.length > 15) {
-      Notify.failure('Name must be at least min 3 and max 15 characters long');
-      return;
-    }
-
-    if (password.length < 8) {
-      Notify.failure('Password must be at least 8 characters long');
-      return;
-    }
-    if (!/\d/.test(password)) {
-      Notify.failure('Password must contain at least one digit');
-      return;
-    }
-    if (!/[a-zA-Z]/.test(password)) {
-      Notify.failure('Password must contain at least one letter');
-      return;
-    }
-
     if (confirmPassword !== password) {
       Notify.failure('Passwords are different, check them and try again...');
       return;
     }
-
-    console.log('Register Form - Username: ', username);
-    console.log('Register Form - Email: ', email);
-
-    Notify.success(`Hello, ${username}!`);
+    dispatch(register({ name, email, password }));
+    Notify.success(`Hello, ${name}!`);
     resetForm(event);
   };
 
   const resetForm = event => {
-    setUsername('');
+    setName('');
     setEmail('');
     setPassword('');
     setConfirmPassword('');
@@ -71,9 +72,9 @@ const RegisterForm = () => {
             <UserIcon />
             <FormInput
               type="text"
-              placeholder="Username"
-              value={username}
-              onChange={event => setUsername(event.target.value)}
+              placeholder="name"
+              value={name}
+              onChange={event => setName(event.target.value)}
               required
             />
           </InputContainer>

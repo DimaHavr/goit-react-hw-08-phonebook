@@ -1,13 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://63db4757e4158e02f318f1a8.mockapi.io';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+
+// Utility to add JWT
+const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
 
 export const fetchContacts = createAsyncThunk(
   '/contacts',
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/contacts');
+      setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -20,6 +26,7 @@ export const addContact = createAsyncThunk(
   async ({ name, number }, thunkAPI) => {
     try {
       const response = await axios.post('/contacts', { name, number });
+      setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -28,10 +35,10 @@ export const addContact = createAsyncThunk(
 );
 
 export const deleteContact = createAsyncThunk(
-  'contacts/deleteContact',
-  async (contactId, thunkAPI) => {
+  'contacts/{contactId}',
+  async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`/contacts/${contactId}`);
+      const response = await axios.delete(`/contacts/${id}`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

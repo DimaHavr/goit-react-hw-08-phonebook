@@ -1,4 +1,17 @@
 import styled from '@emotion/styled';
+import { BsFillFilterSquareFill } from 'react-icons/bs';
+export const FilterIcon = styled(BsFillFilterSquareFill)`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  fill: #00000042;
+  top: 36%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  z-index: 100;
+`;
 
 export const FilterBox = styled.div`
   display: flex;
@@ -16,10 +29,16 @@ export const SubTitle = styled.h2`
   font-size: 25px;
   text-transform: uppercase;
   text-align: left;
+  color: #fff;
+`;
+
+export const InputContainer = styled.div`
+  position: relative;
 `;
 
 export const FilterInput = styled.input`
-  width: 300px;
+  text-indent: 30px;
+  width: 280px;
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
