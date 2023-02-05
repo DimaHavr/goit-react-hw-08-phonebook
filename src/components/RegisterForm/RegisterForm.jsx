@@ -52,7 +52,6 @@ const RegisterForm = () => {
       return;
     }
     dispatch(register({ name, email, password }));
-    Notify.success(`Hello, ${name}!`);
     resetForm(event);
   };
 
