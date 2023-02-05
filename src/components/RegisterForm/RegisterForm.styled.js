@@ -17,6 +17,7 @@ export const EmailIcon = styled(MdOutlineMailOutline)`
   background: transparent;
   border: none;
   z-index: 100;
+  fill: darkslategrey;
 `;
 
 export const PassIcon = styled(MdVpnKey)`
@@ -29,6 +30,7 @@ export const PassIcon = styled(MdVpnKey)`
   background: transparent;
   border: none;
   z-index: 100;
+  fill: darkslategrey;
 `;
 
 export const PassItemIcon = styled(MdOutlineVpnKey)`
@@ -41,6 +43,7 @@ export const PassItemIcon = styled(MdOutlineVpnKey)`
   background: transparent;
   border: none;
   z-index: 100;
+  fill: darkslategrey;
 `;
 
 export const UserIcon = styled(FaUserAlt)`
@@ -53,6 +56,7 @@ export const UserIcon = styled(FaUserAlt)`
   background: transparent;
   border: none;
   z-index: 100;
+  fill: darkslategrey;
 `;
 
 export const EyeIcon = styled(BiShowAlt)`
@@ -61,7 +65,7 @@ export const EyeIcon = styled(BiShowAlt)`
   &:hover,
   &:focus {
     transform: scale(1.05);
-    color: orangered;
+    fill: darkslategrey;
   }
 `;
 export const EyeOffIcon = styled(BiHide)`
@@ -70,7 +74,7 @@ export const EyeOffIcon = styled(BiHide)`
   &:hover,
   &:focus {
     transform: scale(1.05);
-    color: orangered;
+    fill: darkslategrey;
   }
 `;
 
@@ -92,16 +96,16 @@ export const FormInput = styled.input`
   margin-bottom: 20px;
   font-size: 16px;
   border: none;
-  border: 2px solid lightgray;
+  border: 2px solid darkslategrey;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
     transform: scale(1.01);
-    color: orangered;
-    border-color: orangered;
+    color: darkslategrey;
+    outline: 2px solid darkslategrey;
   }
 `;
 
@@ -119,7 +123,7 @@ export const FormButton = styled.button`
   &:hover,
   &:focus {
     transform: scale(1.05);
-    color: orangered;
+    color: darkslategrey;
   }
 `;
 

@@ -4,10 +4,11 @@ import { AiFillDelete } from 'react-icons/ai';
 export const DeleteIcon = styled(AiFillDelete)`
   width: 35px;
   height: 35px;
+  fill: #fff;
   &:hover,
   &:focus {
     transform: scale(1.05);
-    color: orangered;
+    fill: red;
   }
 `;
 
@@ -16,9 +17,11 @@ export const Item = styled.li`
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   padding: 10px;
-  background-color: #4c779c4c;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(20px);
 `;
 export const Text = styled.p`
   display: flex;
@@ -31,7 +34,9 @@ export const Text = styled.p`
   text-align: center;
   padding: 10px;
 `;
-export const TextItem = styled.span``;
+export const TextItem = styled.span`
+  color: #fff;
+`;
 
 export const Button = styled.button`
   background: none;

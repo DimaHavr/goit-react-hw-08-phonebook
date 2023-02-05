@@ -51,7 +51,6 @@ const App = () => {
               />
             }
           />
-
           <Route
             path="/contacts"
             element={<PrivateRoute redirectTo="/" component={<Contacts />} />}

@@ -47,11 +47,10 @@ export const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       const index = state.contacts.findIndex(
-        task => task.id === action.payload.id
+        contact => contact.id === action.payload.id
       );
       state.contacts.splice(index, 1);
     },
-
     [logOut.fulfilled](state) {
       state.contacts = [];
       state.error = null;

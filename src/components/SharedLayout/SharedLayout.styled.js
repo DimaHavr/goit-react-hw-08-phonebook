@@ -24,11 +24,11 @@ export const Link = styled(NavLink)`
   &:hover,
   &:focus {
     transform: scale(1.05);
-    color: orangered;
+    color: darkslategrey;
   }
 
   &.active {
-    color: white;
+    color: darkslategrey;
     background: linear-gradient(#1b1b1b, #111);
     border: 1px solid #000;
     box-shadow: inset 0 0 0 1px #272727;

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { addContact } from '../../redux/contacts/operations';
+import { selectAllContacts } from '../../redux/contacts/selectors';
 import {
   FormBox,
   FormInput,
@@ -10,8 +12,6 @@ import {
   InputContainer,
 } from './ContactForm.styled';
 import Box from '../Box';
-import { addContact } from '../../redux/contacts/operations';
-import { selectAllContacts } from '../../redux/contacts/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,12 @@ const ContactForm = () => {
 
   const onSubmitForm = event => {
     event.preventDefault();
-    if (contacts.find(contact => contact.name === name)) {
+
+    if (
+      contacts
+        .map(({ name }) => name.toLocaleLowerCase())
+        .some(item => item === name.toLocaleLowerCase())
+    ) {
       setName('');
       Notify.failure(`${name} is already in contacts!`);
     } else {

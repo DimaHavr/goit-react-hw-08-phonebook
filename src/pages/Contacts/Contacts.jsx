@@ -3,17 +3,17 @@ import { ContactsContainer } from './Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllContacts, selectLoading } from 'redux/contacts/selectors';
 import { fetchContacts } from '../../redux/contacts/operations';
-import Box from 'components/Box';
-import ContactForm from '../../components/ContactForm';
+import ContactForm from '../../components/ContactForm/ContactForm';
 import ContactList from '../../components/ContactList';
 import ContactFilter from '../../components/ContactFilter';
+import Box from 'components/Box';
 import Loader from 'components/Loader';
 
 const Contacts = () => {
   const contacts = useSelector(selectAllContacts);
   const isLoading = useSelector(selectLoading);
   const dispatch = useDispatch();
-
+  console.log(contacts);
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -22,10 +22,10 @@ const Contacts = () => {
     <Box as="section">
       <ContactsContainer>
         <ContactForm />
-        {contacts.length === 0 && (
+        {isLoading && <Loader />}
+        {Boolean(contacts.length) && (
           <>
             <ContactFilter />
-            {isLoading && <Loader />}
             <ContactList />
           </>
         )}
