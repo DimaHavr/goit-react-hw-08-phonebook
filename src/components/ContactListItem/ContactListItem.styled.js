@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { AiFillDelete } from 'react-icons/ai';
 
 export const DeleteIcon = styled(AiFillDelete)`
@@ -35,6 +35,36 @@ export const Item = styled.li`
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.075);
   backdrop-filter: blur(20px);
+  animation: slide-in-fwd-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  ${props =>
+    !props.isVisible &&
+    'animation: slide-out-tr 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;'}
+
+  @keyframes slide-out-tr {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+      transform: translateY(0) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px) translateX(1000px);
+      transform: translateY(-1000px) translateX(1000px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-in-fwd-right {
+    0% {
+      -webkit-transform: translateZ(-1400px) translateX(1000px);
+      transform: translateZ(-1400px) translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
 `;
 export const Text = styled.p`
   display: flex;
@@ -47,6 +77,7 @@ export const Text = styled.p`
   text-align: center;
   padding: 5px;
 `;
+
 export const TextItem = styled.span`
   color: #fff;
 `;

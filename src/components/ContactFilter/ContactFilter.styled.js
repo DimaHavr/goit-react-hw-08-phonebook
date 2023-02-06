@@ -48,18 +48,4 @@ export const FilterInput = styled.input`
     outline: 1px solid #000;
     border-radius: 5px;
   }
-  @keyframes btn-animation {
-    0% {
-      transform: scale(1.05);
-    }
-    20% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1.13);
-    }
-  }
-  :active {
-    animation: btn-animation 1s ease-out;
-  }
 `;

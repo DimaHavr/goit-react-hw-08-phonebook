@@ -30,7 +30,7 @@ const Home = () => {
         Whether for personal use or for managing a large network, a contact book
         is an effective solution for staying connected.
       </Text>
-      <Box>
+      <Box marginTop="20px">
         <LinkItem to="/login">Log in</LinkItem>
         <LinkItem to="/register">Register</LinkItem>
       </Box>

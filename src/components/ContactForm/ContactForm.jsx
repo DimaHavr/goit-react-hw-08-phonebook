@@ -57,7 +57,7 @@ const ContactForm = () => {
       justifyContent="center"
       flexDirection="column"
       gap="20px"
-      marginBottom="10px"
+      marginTop="20px"
     >
       <FormBox onSubmit={onSubmitForm}>
         <InputContainer>

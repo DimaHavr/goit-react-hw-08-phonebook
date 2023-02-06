@@ -6,11 +6,12 @@ import {
   InputContainer,
   FilterIcon,
 } from './ContactFilter.styled';
-import { setFilter, getFilter } from 'redux/filter/filterSlice';
+import { setFilter } from 'redux/filter/filterSlice';
+import { selectFilter } from '../../redux/filter/selectors';
 
 const ContactFilter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <FilterBox>

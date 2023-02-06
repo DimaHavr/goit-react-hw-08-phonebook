@@ -7,6 +7,22 @@ export const CopyIcon = styled(CgCopyright)`
   height: 35px;
   color: #fff;
   margin-right: 5px;
+  animation: rotate-scale-up-ver 2s ease-in-out infinite;
+
+  @keyframes rotate-scale-up-ver {
+    0% {
+      -webkit-transform: scale(1) rotateY(0);
+      transform: scale(1) rotateY(0);
+    }
+    50% {
+      -webkit-transform: scale(1.2) rotateY(360deg);
+      transform: scale(1.2) rotateY(360deg);
+    }
+    100% {
+      -webkit-transform: scale(1) rotateY(360deg);
+      transform: scale(1) rotateY(360deg);
+    }
+  }
 `;
 
 export const GlitchWrapper = styled.div`
