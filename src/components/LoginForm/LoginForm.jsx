@@ -23,13 +23,6 @@ const LoginForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(logIn({ email, password }));
-    resetForm(event);
-  };
-
-  const resetForm = event => {
-    setEmail('');
-    setPassword('');
-    event.target.reset();
   };
 
   return (

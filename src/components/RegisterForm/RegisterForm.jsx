@@ -33,17 +33,7 @@ const RegisterForm = () => {
       Notify.failure('Passwords are different, check them and try again...');
       return;
     }
-
     dispatch(register({ name, email, password }));
-    resetForm(event);
-  };
-
-  const resetForm = event => {
-    setName('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
-    event.target.reset();
   };
 
   return (
