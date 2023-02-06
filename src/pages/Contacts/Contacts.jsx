@@ -4,6 +4,8 @@ import {
   Glitch,
   GlitchWrapper,
   Keyframes,
+  TextLink,
+  CopyIcon,
 } from './Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllContacts, selectLoading } from 'redux/contacts/selectors';
@@ -24,7 +26,13 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Box as="section">
+    <Box
+      as="section"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      height="100vh"
+    >
       <ContactsContainer>
         <ContactForm />
         <GlitchWrapper>
@@ -36,6 +44,16 @@ const Contacts = () => {
         {isLoading && <Loader />}
         {Boolean(contacts.length) && <ContactList />}
       </ContactsContainer>
+      <Box
+        as="div"
+        display="flex"
+        alignItems="center"
+        marginTop="auto"
+        paddingBottom="10px"
+      >
+        <CopyIcon />
+        <TextLink href="https://github.com/DimaHavr">DimaHavr</TextLink>
+      </Box>
     </Box>
   );
 };

@@ -35,7 +35,7 @@ const Home = () => {
         <LinkItem to="/register">Register</LinkItem>
       </Box>
       <Box
-        as="footer"
+        as="div"
         display="flex"
         alignItems="center"
         marginTop="auto"
