@@ -1,7 +1,6 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { deleteContact } from '../../redux/contacts/operations';
 import {
   Item,
@@ -21,6 +20,7 @@ const ContactListItem = ({ id, name, number }) => {
         {name}: <TextItem>{number}</TextItem>
       </Text>
       <Button
+        disabled={!isVisible}
         onClick={() => {
           Notify.info('Сontact deleted!');
           setIsVisible(false);

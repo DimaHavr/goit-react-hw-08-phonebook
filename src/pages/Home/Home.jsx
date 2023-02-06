@@ -8,6 +8,7 @@ import {
   TextLink,
   CopyIcon,
 } from './Home.styled';
+
 const Home = () => {
   return (
     <Box

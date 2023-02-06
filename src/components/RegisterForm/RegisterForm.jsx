@@ -1,7 +1,7 @@
 import Box from 'components/Box';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { register } from '../../redux/auth/operations';
 import {
   FormContainer,

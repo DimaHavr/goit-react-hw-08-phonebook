@@ -1,13 +1,14 @@
 import Box from 'components/Box';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { selectFilter } from '../../redux/filter/selectors';
+import { setFilter } from 'redux/filter/filterSlice';
 import {
   FilterBox,
   FilterInput,
   InputContainer,
   FilterIcon,
 } from './ContactFilter.styled';
-import { setFilter } from 'redux/filter/filterSlice';
-import { selectFilter } from '../../redux/filter/selectors';
 
 const ContactFilter = () => {
   const dispatch = useDispatch();

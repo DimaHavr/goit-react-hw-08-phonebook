@@ -35,7 +35,7 @@ export const Item = styled.li`
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.075);
   backdrop-filter: blur(20px);
-  animation: slide-in-fwd-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-fwd-right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   ${props =>
     !props.isVisible &&
     'animation: slide-out-tr 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;'}

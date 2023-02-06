@@ -7,7 +7,7 @@ export const CopyIcon = styled(CgCopyright)`
   height: 35px;
   color: #fff;
   margin-right: 5px;
-  animation: rotate-scale-up-ver 2s ease-in-out infinite;
+  animation: rotate-scale-up-ver 3s ease-in-out infinite;
 
   @keyframes rotate-scale-up-ver {
     0% {

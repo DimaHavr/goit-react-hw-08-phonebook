@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import { BsFillTelephoneFill } from 'react-icons/bs';
+import styled from 'styled-components';
 import { FaUserAlt } from 'react-icons/fa';
+import { BsFillTelephoneFill } from 'react-icons/bs';
 
 export const PhoneIcon = styled(BsFillTelephoneFill)`
   width: 20px;

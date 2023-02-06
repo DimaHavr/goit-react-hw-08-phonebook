@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { logOut } from 'redux/auth/operations';
 import {
   fetchContacts,
   addContact,
   deleteContact,
 } from '../contacts/operations.js';
-import { logOut } from 'redux/auth/operations';
 
-const handlePending = state => {
+const pending = state => {
   state.isLoading = true;
 };
-const handleRejected = (state, action) => {
+
+const rejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
@@ -24,12 +25,12 @@ export const contactsSlice = createSlice({
 
   extraReducers: builder => {
     builder
-      .addCase(fetchContacts.pending, handlePending)
-      .addCase(addContact.pending, handlePending)
-      .addCase(deleteContact.pending, handlePending)
-      .addCase(fetchContacts.rejected, handleRejected)
-      .addCase(addContact.rejected, handleRejected)
-      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(fetchContacts.pending, pending)
+      .addCase(addContact.pending, pending)
+      .addCase(deleteContact.pending, pending)
+      .addCase(fetchContacts.rejected, rejected)
+      .addCase(addContact.rejected, rejected)
+      .addCase(deleteContact.rejected, rejected)
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;

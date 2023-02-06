@@ -1,3 +1,5 @@
+import Box from '../Box';
+
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -11,7 +13,6 @@ import {
   UserIcon,
   InputContainer,
 } from './ContactForm.styled';
-import Box from '../Box';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -28,14 +29,20 @@ const ContactForm = () => {
     }
   };
 
+  const checkUserName = contacts
+    .map(({ name }) => name.toLocaleLowerCase())
+    .some(item => item === name.toLocaleLowerCase());
+
+  const resetForm = event => {
+    setName('');
+    setNumber('');
+    event.target.reset();
+  };
+
   const onSubmitForm = event => {
     event.preventDefault();
 
-    if (
-      contacts
-        .map(({ name }) => name.toLocaleLowerCase())
-        .some(item => item === name.toLocaleLowerCase())
-    ) {
+    if (checkUserName) {
       setName('');
       Notify.failure(`${name} is already in contacts!`);
     } else {
@@ -43,12 +50,6 @@ const ContactForm = () => {
       resetForm(event);
       Notify.success(`${name} is added in contacts!`);
     }
-  };
-
-  const resetForm = event => {
-    setName('');
-    setNumber('');
-    event.target.reset();
   };
 
   return (

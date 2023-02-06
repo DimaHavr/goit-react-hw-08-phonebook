@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { BsFillFilterSquareFill } from 'react-icons/bs';
+
 export const FilterIcon = styled(BsFillFilterSquareFill)`
   width: 20px;
   height: 20px;
@@ -39,7 +40,8 @@ export const FilterInput = styled.input`
   border: 2px solid #000;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {

@@ -3,9 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from '../redux/auth/operations';
 import { useAuth } from 'hooks';
-import { PrivateRoute } from '../components/PrivateRoute';
-import { RestrictedRoute } from '../components/RestrictedRoute';
-import Box from './Box';
+import { PrivateRoute } from '../utils/PrivateRoute';
+import { RestrictedRoute } from '../utils/RestrictedRoute';
 import Loader from './Loader';
 import SharedLayout from './SharedLayout';
 import NotFoundPage from 'pages/NotFoundPage';
@@ -26,13 +25,7 @@ const App = () => {
   return isRefreshing ? (
     <Loader />
   ) : (
-    <Suspense
-      fallback={
-        <Box margin="0 auto">
-          <Loader />
-        </Box>
-      }
-    >
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route
