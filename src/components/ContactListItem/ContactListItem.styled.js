@@ -84,7 +84,7 @@ export const Text = styled.p`
   align-items: flex-start;
   font-weight: bold;
   font-size: 15px;
-  text-transform: uppercase;
+
   text-align: center;
   padding: 5px;
 `;
