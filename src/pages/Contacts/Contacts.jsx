@@ -4,7 +4,7 @@ import { selectAllContacts, selectLoading } from 'redux/contacts/selectors';
 import { fetchContacts } from '../../redux/contacts/operations';
 import ContactForm from '../../components/ContactForm';
 import ContactFilter from '../../components/ContactFilter';
-import ContactList from '../../components/ContactList';
+import ContactList from '../../components/ContactList/ContactList';
 import Loader from 'components/Loader';
 import Box from 'components/Box';
 import {

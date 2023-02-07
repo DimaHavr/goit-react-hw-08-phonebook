@@ -1,28 +1,39 @@
 import styled from 'styled-components';
 import { AiFillDelete } from 'react-icons/ai';
+import { FaUserEdit } from 'react-icons/fa';
 
 export const DeleteIcon = styled(AiFillDelete)`
   width: 25px;
   height: 25px;
   fill: #fff;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover,
   &:focus {
     transform: scale(1.05);
     fill: red;
   }
-  @keyframes btn-animation {
-    0% {
-      transform: scale(1.05);
-    }
-    20% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1.13);
-    }
-  }
   :active {
-    animation: btn-animation 1s ease-out;
+    fill: #fff;
+  }
+`;
+
+export const UpdateIcon = styled(FaUserEdit)`
+  width: 25px;
+  height: 25px;
+  fill: #fff;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    fill: blue;
+  }
+
+  :active {
+    fill: #fff;
   }
 `;
 

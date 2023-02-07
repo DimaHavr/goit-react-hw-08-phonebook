@@ -4,7 +4,8 @@ import {
   fetchContacts,
   addContact,
   deleteContact,
-} from '../contacts/operations.js';
+  updateContact,
+} from './operations.js';
 
 const pending = state => {
   state.isLoading = true;
@@ -28,9 +29,11 @@ export const contactsSlice = createSlice({
       .addCase(fetchContacts.pending, pending)
       .addCase(addContact.pending, pending)
       .addCase(deleteContact.pending, pending)
+      .addCase(updateContact.pending, pending)
       .addCase(fetchContacts.rejected, rejected)
       .addCase(addContact.rejected, rejected)
       .addCase(deleteContact.rejected, rejected)
+      .addCase(updateContact.rejected, rejected)
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -48,6 +51,14 @@ export const contactsSlice = createSlice({
           contact => contact.id === action.payload.id
         );
         state.contacts.splice(index, 1);
+      })
+      .addCase(updateContact.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.contacts.findIndex(
+          contact => contact.id === action.payload.id
+        );
+        state.contacts[index] = action.payload;
       })
       .addCase(logOut.fulfilled, state => {
         state.contacts = [];
