@@ -28,10 +28,13 @@ const ContactUpdate = ({
   const checkUserName = contacts
     .map(({ name }) => name.toLocaleLowerCase())
     .some(item => item === name.toLocaleLowerCase());
+  const checkUserNumber = contacts
+    .map(({ number }) => number)
+    .some(item => item === number);
 
   const onSubmitForm = event => {
     event.preventDefault();
-    if (checkUserName) {
+    if (checkUserName && checkUserNumber) {
       Notify.failure(`${name} is already in contacts...`);
     } else {
       dispatch(updateContact({ id: selectedId, name: name, number: number }));
