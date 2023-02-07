@@ -131,7 +131,7 @@ export const FormInput = styled.input`
   margin-bottom: 20px;
   font-size: 16px;
   border: none;
-  border: 3px solid #000;
+  border: 2px solid #000;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,7 +140,7 @@ export const FormInput = styled.input`
   &:focus {
     transform: scale(1.01);
     color: #000;
-    outline: 1px solid #000;
+    outline: 2px solid #000;
     border-radius: 5px;
   }
 `;

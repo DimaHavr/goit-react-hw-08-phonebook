@@ -36,7 +36,6 @@ export const FilterInput = styled.input`
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
-  border: none;
   border: 2px solid #000;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -47,7 +46,7 @@ export const FilterInput = styled.input`
   &:focus {
     transform: scale(1.01);
     color: #000;
-    outline: 1px solid #000;
+    outline: 2px solid #000;
     border-radius: 5px;
   }
 `;

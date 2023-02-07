@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import ContactEditor from '../ContactUpdate';
+import ContactUpdate from '../ContactUpdate';
 import { Overlay, ModalBox } from './ContactUpdateModal.styled';
 const modalRoot = document.querySelector('#modal-root');
 
@@ -33,7 +33,7 @@ export default function ContactUpdateModal({
   return createPortal(
     <Overlay onClick={onBackdropCloseModal}>
       <ModalBox>
-        <ContactEditor
+        <ContactUpdate
           onToggleModal={onToggleModal}
           selectedName={selectedName}
           selectedNumber={selectedNumber}

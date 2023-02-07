@@ -60,7 +60,7 @@ export const FormInput = styled.input`
   &:focus {
     transform: scale(1.01);
     color: #000;
-    outline: 1px solid #000;
+    outline: 2px solid #000;
     border-radius: 5px;
   }
 `;
