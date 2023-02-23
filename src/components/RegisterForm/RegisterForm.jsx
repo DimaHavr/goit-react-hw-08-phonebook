@@ -75,7 +75,7 @@ const RegisterForm = () => {
             />
           </InputContainer>
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
+            {showPassword ? <EyeOffIcon /> : <EyeIcon />}
           </ShowPasswordButton>
         </ShowPasswordContainer>
         <ShowPasswordContainer>
@@ -88,7 +88,7 @@ const RegisterForm = () => {
             required
           />
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
+            {showPassword ? <EyeOffIcon /> : <EyeIcon />}
           </ShowPasswordButton>
         </ShowPasswordContainer>
         <FormButton type="submit">Register</FormButton>

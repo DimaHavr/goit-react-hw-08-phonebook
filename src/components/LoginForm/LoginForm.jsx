@@ -50,7 +50,7 @@ const LoginForm = () => {
             />
           </InputContainer>
           <ShowPasswordButton onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
+            {showPassword ? <EyeOffIcon /> : <EyeIcon />}
           </ShowPasswordButton>
         </ShowPasswordContainer>
         <FormButton type="submit">Login</FormButton>
