@@ -1,4 +1,4 @@
-<a href='https://dimahavr.github.io/goit-react-hw-08-phonebook/'>PhoneBook</a>
+<a href='https://dimahavr.github.io/goit-react-hw-08-phonebook/'>Live page</a>
 
 EN:
 </br>
